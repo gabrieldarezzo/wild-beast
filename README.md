@@ -5,4 +5,4 @@ Screenshot:
 ![Demo do site](docs/site-example.jpeg)     
 
 Link para teste:  
-http://gabrieldarezzo.github.io/wild-beast
+https://gabrieldarezzo.github.io/wild-beast/
