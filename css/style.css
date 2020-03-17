@@ -1,6 +1,4 @@
 html, body {
-    width: 100%;
-    height: 100%;
     margin: 0px;
     padding: 0px;    
 }
@@ -23,12 +21,11 @@ body, p, h1, ul, li, blockquote {
 }
 
 img {
-    width: 100%;
-    display: block;
-    max-width: 100%;
-    border-radius: 5px;
+  width: 100%;
+  display: block;
+  max-width: 100%;
+  border-radius: 5px;
 }
-
 
 /* Grid geral */
 
@@ -44,12 +41,12 @@ img {
 
 @media (max-width: 1200px) {
   .struct {
-    grid-template-columns: minmax(160px, 1fr) 3fr;
+    /* grid-template-columns: minmax(160px, 1fr) 3fr; */ 
     grid-template-areas: 
-      "header header"
-      "sidenav content"
-      "sidenav adverts"
-      "footer footer"
+      "header header header"
+      "sidenav content content"
+      "sidenav adverts adverts"
+      "footer footer footer"
     ;
   }
 }
@@ -105,6 +102,25 @@ img {
   margin-left: 30px; 
 }
 
+@media (max-width: 760px) {
+  .header {
+    grid-template-columns: auto;
+  }
+
+  .logo {
+    margin-bottom: 20px;
+  }
+
+  .header nav a {
+    font-size: 1em;
+  }
+
+  .header li + li {
+    margin-left: 10px;
+  }
+
+}
+
 /* SIDENAV */
 
 .sidenav {
@@ -129,6 +145,52 @@ img {
   background-color: #B07DFB;
 }
 
+@keyframes setas {
+  from {
+    right: 30px;
+  }
+  to {
+    right: 20px;
+  }
+}
+
+@media (max-width: 760px) {
+
+  .sidenav {
+    position: relative;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+
+  .sidenav::after {
+    content: '→';
+    position: absolute;
+    top: 5px;
+    right: 30px;
+    color: rgba(0,0,0, .3);
+    animation: setas .5s ease-in 0s infinite alternate;
+  }
+
+
+  .sidenav ul {
+    display: flex;    
+  }
+
+  .sidenav ul li {
+    flex: 1 0 60px;
+  }
+
+  .sidenav {
+    padding: 0 30px;
+  }
+
+  .sidenav li a {
+    margin: 30px 30px 30px 0px;
+  }
+
+}
+
 /* CONTENT */
 
 .content {
@@ -140,6 +202,14 @@ img {
   grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
 }
+
+@media (max-width: 600px) {
+  .content {
+      grid-template-columns: auto;
+  }
+}
+
+
 
 .col-wide {
   grid-column: 1 / -1;
@@ -265,6 +335,7 @@ img {
   align-content: start;
   padding: 30px;
   grid-gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
 /* FOOTER  */
