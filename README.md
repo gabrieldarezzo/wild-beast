@@ -1,5 +1,8 @@
 # wild-beast
-Página de Estudo de Grid CSS
+Página de Estudo de Grid CSS / `display: grid`   
 
+Screenshot:  
+![Demo do site](doc/site-example.jpeg)     
 
-https://www.origamid.com/curso/css-grid-layout/4-3-wildbeast-estrutura-do-grid
+Link para teste:  
+http://gabrieldarezzo.github.io/wild-beast
